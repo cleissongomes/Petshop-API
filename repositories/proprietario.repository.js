@@ -15,6 +15,19 @@ async function insertProprietario(proprietario) {
   }
 }
 
+async function getProprietarios() {
+  const conn = await connect();
+  try {
+    const res = await conn.query('SELECT * FROM proprietarios');
+    return res.rows;
+  } catch (err) {
+    throw err;
+  } finally {
+    conn.release();
+  }
+}
+
 export default {
   insertProprietario,
+  getProprietarios,
 };

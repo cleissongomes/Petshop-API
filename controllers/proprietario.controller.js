@@ -14,6 +14,16 @@ async function createProprietario(err, req, res, next) {
   }
 }
 
+async function getProprietarios(err, req, res, next) {
+  try {
+    res.send(await ProprietarioService.getproprietarios());
+    logger.info('GET /proprietarios');
+  } catch (err) {
+    next(err);
+  }
+}
+
 export default {
   createProprietario,
+  getProprietarios,
 };
