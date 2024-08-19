@@ -42,8 +42,24 @@ async function getProprietario(id) {
   }
 }
 
+async function updateProprietario(proprietario) {
+  const conn = await connect();
+  try {
+    const sql =
+      'UPDATE proprietarios SET nome = $1, telefone = $2 WHERE proprietario_id = $3 RETURNING *';
+    const values = [proprietario.nome, proprietario.telefone];
+    const res = await conn.query(sql, values);
+    return res.rows[0];
+  } catch (err) {
+    throw err;
+  } finally {
+    conn.release();
+  }
+}
+
 export default {
   insertProprietario,
   getProprietarios,
   getProprietario,
+  updateProprietario,
 };

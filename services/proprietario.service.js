@@ -4,16 +4,20 @@ async function createProprietario(proprietario) {
   return await ProprietarioRepository.insertProprietario(proprietario);
 }
 
-async function getproprietarios() {
+async function getProprietarios() {
   return await ProprietarioRepository.getProprietarios();
 }
 
-async function getproprietario(id) {
+async function getProprietario(id) {
   return await ProprietarioRepository.getProprietario(id);
 }
 
+async function updateProprietario(proprietario) {
+  return await ProprietarioRepository.updateProprietario(proprietario);
+}
 export default {
   createProprietario,
-  getproprietarios,
-  getproprietario,
+  getProprietarios,
+  getProprietario,
+  updateProprietario,
 };
