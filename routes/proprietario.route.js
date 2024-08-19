@@ -7,5 +7,6 @@ router.post('/', ProprietarioController.createProprietario);
 router.get('/', ProprietarioController.getProprietarios);
 router.get('/', ProprietarioController.getProprietario);
 router.put('/', ProprietarioController.updateProprietario);
+router.delete('/', ProprietarioController.deleteProprietario);
 
 export default router;

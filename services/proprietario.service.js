@@ -15,9 +15,15 @@ async function getProprietario(id) {
 async function updateProprietario(proprietario) {
   return await ProprietarioRepository.updateProprietario(proprietario);
 }
+
+async function deleteProprietario(id) {
+  await ProprietarioRepository.deleteProprietario(id);
+}
+
 export default {
   createProprietario,
   getProprietarios,
   getProprietario,
   updateProprietario,
+  deleteProprietario,
 };

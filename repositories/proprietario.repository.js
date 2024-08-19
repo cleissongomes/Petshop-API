@@ -57,9 +57,25 @@ async function updateProprietario(proprietario) {
   }
 }
 
+async function deleteProprietario(id) {
+  const conn = await connect();
+  try {
+    const res = await conn.query(
+      'DELETE FROM proprietarios WHERE proprietario_id = $1',
+      [id]
+    );
+    return res.rows;
+  } catch (err) {
+    throw err;
+  } finally {
+    conn.release();
+  }
+}
+
 export default {
   insertProprietario,
   getProprietarios,
   getProprietario,
   updateProprietario,
+  deleteProprietario,
 };

@@ -50,9 +50,20 @@ async function updateProprietario(err, req, res, next) {
   }
 }
 
+async function deleteProprietario(err, req, res, next) {
+  try {
+    await ProprietarioService.deleteProprietario(req.params.id);
+    res.send('O cliente foi excluído com sucesso!');
+    logger.info('DELETE /client');
+  } catch (err) {
+    next(err);
+  }
+}
+
 export default {
   createProprietario,
   getProprietarios,
   getProprietario,
   updateProprietario,
+  deleteProprietario,
 };
