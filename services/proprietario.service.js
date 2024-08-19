@@ -8,7 +8,12 @@ async function getproprietarios() {
   return await ProprietarioRepository.getProprietarios();
 }
 
+async function getproprietario(id) {
+  return await ProprietarioRepository.getProprietario(id);
+}
+
 export default {
   createProprietario,
   getproprietarios,
+  getproprietario,
 };

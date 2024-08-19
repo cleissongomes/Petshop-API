@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/', ProprietarioController.createProprietario);
 router.get('/', ProprietarioController.getProprietarios);
+router.get('/', ProprietarioController.getProprietario);
 
 export default router;
